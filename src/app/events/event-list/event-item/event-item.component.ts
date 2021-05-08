@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Event } from '../../Event.module';
-import { EventsService } from '../../Events.service';
 
 @Component({
   selector: 'event-item',
@@ -9,12 +8,10 @@ import { EventsService } from '../../Events.service';
 })
 export class EventItemComponent implements OnInit {
   important: boolean = false;
-  events: Event[];
-  constructor(private service: EventsService) {}
+  @Input() currentEvent: Event;
+  constructor() {}
 
-  ngOnInit() {
-    this.events = this.service.getAllEvents();
-  }
+  ngOnInit() {}
 
   addToFavourite(e) {
     console.log(e);

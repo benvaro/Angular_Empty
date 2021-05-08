@@ -1,1 +1,1 @@
-<event-item class="row"></event-item>
+<event-item *ngFor="let item of events" [currentEvent]="item" class="row"></event-item>

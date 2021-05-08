@@ -1,16 +1,16 @@
-<div class="card col-sm-3" *ngFor="let item of events">
-  <img class="card-img-top" [src]="item.image_url" alt="Card image cap">
+<div class="card col-sm-3">
+  <img class="card-img-top" [src]="currentEvent.image_url" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{item.title}}</h5>
-    <p class="card-text">{{item.description}}
+    <h5 class="card-title">{{currentEvent.title}}</h5>
+    <p class="card-text">{{currentEvent.description}}
     </p>
   </div>
   <div class="card-body">
     <p *ngIf="important == true">
       Important
     </p>
-    <input [(value)] = "item.title" />
+    <input [(value)]="currentEvent.title" />
     <i class="bi bi-bookmark-fill" (click)="addToFavourite($event)"></i>
-    <p class="card-link">{{item.date}}</p>
+    <p class="card-link">{{currentEvent.date}}</p>
   </div>
 </div>
